@@ -1,15 +1,20 @@
 @use "../packages/node_modules/@picocss/pico/scss/pico" with (
+  
+  // Enable <header>, <main>, <footer> inside $semantic-root-element as containers
   $enable-semantic-container: true,
+
+  // Enable .classes
   $enable-classes: true,
+
   $modules: (
-    "content/code": false,
+    "content/code": true,
     "forms/input-color": false,
     "forms/input-date": false,
     "forms/input-file": false,
     "forms/input-range": false,
     "forms/input-search": false,
     "components/accordion": false,
-    "components/card": false,
+    "components/card": true,
     "components/dropdown": false,
     "components/loading": false,
     "components/modal": false,
@@ -20,3 +25,8 @@
     "utilities/reduce-motion": false
   )
 );
+
+//Override classes
+html {
+  font-size: 1.1rem;
+}

@@ -1778,4 +1778,64 @@ article > footer {
 
 html {
   font-size: 1.1rem;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+section .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 6fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+header.grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 4rem;
+  max-height: 420px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+.timeline div {
+  padding-bottom: 2rem;
+}
+.timeline .left {
+  position: relative;
+  border-right: #e2e2e2 0.5px solid;
+}
+.timeline .left::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #51b4ff;
+  z-index: 1;
+}
+.timeline .left::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */

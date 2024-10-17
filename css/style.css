@@ -1786,6 +1786,9 @@ body {
   padding: 0 0.5rem;
 }
 
+section {
+  margin-bottom: 4rem;
+}
 section .grid {
   display: grid;
   grid-template-columns: repeat(2, 6fr);
@@ -1806,16 +1809,28 @@ header.grid {
 
 .timeline {
   display: grid;
-  grid-template-columns: 3fr 9fr;
+  grid-template-columns: 4fr 8fr;
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
 }
 .timeline div {
   padding-bottom: 2rem;
 }
+.timeline div:last-of-type {
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+}
+.timeline div:last-of-type p:last-of-type {
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
 .timeline .left {
   position: relative;
   border-right: #e2e2e2 0.5px solid;
+}
+.timeline .left img {
+  max-width: 190px;
+  max-height: 45px;
 }
 .timeline .left::before {
   content: "";

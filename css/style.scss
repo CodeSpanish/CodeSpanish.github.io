@@ -1,3 +1,5 @@
+@use "icons.css";
+
 @use "../packages/node_modules/@picocss/pico/scss/pico" with (
   // Enable <header>, <main>, <footer> inside $semantic-root-element as containers
   $enable-semantic-container: true,
@@ -61,6 +63,13 @@ header.grid {
   margin-bottom: 4rem;
 }
 
+//What I do section
+h3 {
+  span {
+    padding-right: 0.5rem;
+  }
+}
+
 //Experience section
 .timeline {
   display: grid;
@@ -84,6 +93,16 @@ header.grid {
   .left {
     position: relative;  // Make the div a positioning context for the circle
     border-right: colors.$grey-100 0.5px solid;
+
+    p:nth-child(1) {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }  
+
+    p:nth-child(2) {
+      font-size: small;
+      margin-bottom: 1rem;
+    }  
     
     img {
       max-width: 190px;

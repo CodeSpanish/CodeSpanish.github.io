@@ -24,7 +24,8 @@
     "components/tooltip": false,
     "utilities/accessibility": false,
     "utilities/reduce-motion": false
-  ));
+  )
+);
 
 @use "../packages/node_modules/@picocss/pico/scss/colors/index" as colors;
 
@@ -47,8 +48,35 @@ h3 {
   }
 }
 
-@media (min-width: 769px) {
+.timeline {
+  .left {
+    p:nth-child(1) {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
 
+    p:nth-child(2) {
+      font-size: small;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 50%;
+      max-height: 45px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    div:nth-child(even) {
+      margin-bottom: 2rem;
+      border-bottom: colors.$grey-100 0.5px solid;;
+    }
+  }
+}
+
+@media (min-width: 769px) {
   section {
     .grid {
       display: grid;
@@ -93,16 +121,6 @@ h3 {
     .left {
       position: relative; // Make the div a positioning context for the circle
       border-right: colors.$grey-100 0.5px solid;
-
-      p:nth-child(1) {
-        font-weight: bold;
-        margin-bottom: 0px;
-      }
-
-      p:nth-child(2) {
-        font-size: small;
-        margin-bottom: 1rem;
-      }
 
       img {
         max-width: 190px;

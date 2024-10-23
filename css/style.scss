@@ -24,9 +24,7 @@
     "components/tooltip": false,
     "utilities/accessibility": false,
     "utilities/reduce-motion": false
-  )
-  
-);
+  ));
 
 @use "../packages/node_modules/@picocss/pico/scss/colors/index" as colors;
 
@@ -37,30 +35,9 @@ html {
 
 // Override container width
 body {
-  max-width: 1200px;  // Set your desired width
-  margin: 0 auto;  // Center the container
+  max-width: 1200px; // Set your desired width
+  margin: 0 auto; // Center the container
   padding: 0 0.5rem;
-}
-
-section {
-  .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 6fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 4rem;
-      margin-bottom: 2rem;
-  }
-  margin-bottom: 4rem;
-}
-
-header.grid {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 4rem;
-  max-height: 420px;
-  overflow: hidden;
-  margin-bottom: 4rem;
 }
 
 //What I do section
@@ -70,70 +47,93 @@ h3 {
   }
 }
 
-//Experience section
-.timeline {
-  display: grid;
-  grid-template-columns: 4fr 8fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 20px;
+@media (min-width: 769px) {
 
-  div {
-    padding-bottom: 2rem;
+  section {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 6fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 4rem;
+      margin-bottom: 2rem;
+    }
+    margin-bottom: 4rem;
   }
 
-  div:last-of-type {
-    margin-bottom: 0rem;
-    padding-bottom: 0rem;
-    p:last-of-type{
-      padding-bottom: 0rem;
+  header.grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 4rem;
+    max-height: 420px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+
+  //Experience section
+  .timeline {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+
+    div {
+      padding-bottom: 2rem;
+    }
+
+    div:last-of-type {
       margin-bottom: 0rem;
+      padding-bottom: 0rem;
+      p:last-of-type {
+        padding-bottom: 0rem;
+        margin-bottom: 0rem;
+      }
+    }
+
+    .left {
+      position: relative; // Make the div a positioning context for the circle
+      border-right: colors.$grey-100 0.5px solid;
+
+      p:nth-child(1) {
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+
+      p:nth-child(2) {
+        font-size: small;
+        margin-bottom: 1rem;
+      }
+
+      img {
+        max-width: 190px;
+        max-height: 45px;
+      }
+
+      // Outer Circle
+      &::before {
+        content: ""; // Required to create the pseudo-element
+        position: absolute; // Position the circle relative to .left
+        top: 10px; // Adjust as needed to place the circle on top
+        right: -6px; // Adjust as needed to place the circle on the right
+        width: 11px; // Size of the outer circle
+        height: 11px; // Size of the outer circle
+        border-radius: 50%; // Make the element circular
+        background-color: colors.$azure-300; // Set the outer circle's color
+        z-index: 1; // Ensure the outer circle stays on top
+      }
+
+      // Inner Circle (White) - Centered inside the outer circle
+      &::after {
+        content: ""; // Required to create the pseudo-element
+        position: absolute; // Position the circle relative to .left
+        top: 12px; // Center vertically within the outer circle
+        right: -4px; // Center horizontally within the outer circle
+        width: 7px; // Size of the inner circle (smaller than the outer one)
+        height: 7px; // Size of the inner circle
+        border-radius: 50%; // Make the element circular
+        background-color: #fff; // Set the inner circle's color to white
+        z-index: 2; // Ensure the inner circle stays on top
+      }
     }
   }
-
-  .left {
-    position: relative;  // Make the div a positioning context for the circle
-    border-right: colors.$grey-100 0.5px solid;
-
-    p:nth-child(1) {
-      font-weight: bold;
-      margin-bottom: 0px;
-    }  
-
-    p:nth-child(2) {
-      font-size: small;
-      margin-bottom: 1rem;
-    }  
-    
-    img {
-      max-width: 190px;
-      max-height: 45px;
-    }
-
-    // Outer Circle
-    &::before {
-      content: "";  // Required to create the pseudo-element
-      position: absolute;  // Position the circle relative to .left
-      top: 10px;  // Adjust as needed to place the circle on top
-      right: -6px;  // Adjust as needed to place the circle on the right
-      width: 11px;  // Size of the outer circle
-      height: 11px;  // Size of the outer circle
-      border-radius: 50%;  // Make the element circular
-      background-color: colors.$azure-300;  // Set the outer circle's color
-      z-index: 1;  // Ensure the outer circle stays on top
-    }
-    
-    // Inner Circle (White) - Centered inside the outer circle
-    &::after {
-      content: "";  // Required to create the pseudo-element
-      position: absolute;  // Position the circle relative to .left
-      top: 12px;  // Center vertically within the outer circle
-      right: -4px;  // Center horizontally within the outer circle
-      width: 7px;  // Size of the inner circle (smaller than the outer one)
-      height: 7px;  // Size of the inner circle
-      border-radius: 50%;  // Make the element circular
-      background-color: #fff;  // Set the inner circle's color to white
-      z-index: 2;  // Ensure the inner circle stays on top
-    }
-  }
-
 }

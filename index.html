@@ -21,20 +21,19 @@
   </head>
   <body>
     <nav>
-      <div class="grid"> 
+      <div class="grid">
         <ul>
           <li>-</li>
         </ul>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#">Experience</a></li>
-          <li><a href="#">Education</a></li>
-          <li><a href="#">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <span id="about">&ThickSpace;</span>
-    <header class="grid">
+    <header id="about" class="grid">
       <image src="/images/Pablo-Matamoros.webp" />
       <div>
         <h1>Pablo Matamoros</h1>
@@ -127,7 +126,7 @@
         </div>
       </section>
       <section>
-        <h2>Employment History</h2>
+        <h2 id="experience">Employment History</h2>
         <hr />
         <div class="timeline">
           <div class="left">
@@ -478,7 +477,7 @@
         </ul>
       </section>
     </main>
-    <section class="contact container">
+    <section id="contact" class="contact container">
       <h2>Contact me</h2>
       <hr />
       <div class="grid">
@@ -556,6 +555,7 @@
                 autocomplete="given-name"
                 onfocus=" if (this.value == '') { this.value = ''; }"
                 onblur="if (this.value == '') { this.value='';} "
+                required
                 tabindex="500"
               />
             </label>
@@ -568,6 +568,7 @@
                 placeholder="Email"
                 autocomplete="email"
                 value=""
+                required
                 tabindex="501"
                 onfocus=" if (this.value == '') { this.value = ''; }"
                 onblur="if (this.value == '') { this.value='';}"
@@ -584,6 +585,7 @@
                 value=""
                 onfocus=" if (this.value == '') { this.value = ''; }"
                 onblur="if (this.value == '') { this.value='';}"
+                required
                 tabindex="502"
               />
             </label>
@@ -592,14 +594,13 @@
               <textarea
                 name="custom Message"
                 id="awf_field-117670142"
-                placeholder="Write a professional short bio..."
-                aria-label="Professional short bio"
+                placeholder="Please briefly describe your reason for reaching out in a line or two."
+                value="Please briefly describe your reason for reaching out in a line or two."
                 onfocus="if (this.value == 'Please briefly describe your reason for reaching out in a line or two.') { this.value = ''; }"
                 onblur="if (this.value == '') { this.value='Please briefly describe your reason for reaching out in a line or two.';}"
+                required
                 tabindex="503"
-                style="height: 250px"
-              >
-              </textarea>
+              ></textarea>
             </label>
             <input
               name="submit"

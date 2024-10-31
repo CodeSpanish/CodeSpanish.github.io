@@ -78,6 +78,7 @@
 //Override classes
 html {
   font-size: 1.1rem;
+  scroll-behavior: smooth;
 }
 
 // Override container width
@@ -115,6 +116,10 @@ nav {
     display: inline; // Display list items inline
     margin: 0 1rem; // Add spacing between list items
   }
+}
+
+:target {
+  padding-top: 4rem;
 }
 
 h1 {
@@ -176,6 +181,8 @@ footer {
   }
 
   header.grid {
+    padding-top: 4rem;
+    margin-top: -4rem; 
     display: grid;
     grid-template-columns: 5fr 7fr;
     grid-template-rows: 1fr;
@@ -246,6 +253,8 @@ footer {
 }
 
 section.contact {
+  padding-top: 4rem;
+  margin-top: -4rem; 
   div.grid {
     padding-top: 1rem;
     form {
@@ -253,7 +262,8 @@ section.contact {
         text-align: center;
       }
       textarea {
-        height: 200px;
+        height: 125px;
+        text-align: left;
       }
     }
   }

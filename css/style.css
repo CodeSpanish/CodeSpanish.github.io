@@ -2072,6 +2072,7 @@ aside li [role=button] {
 
 html {
   font-size: 1.1rem;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -2105,6 +2106,10 @@ nav ul {
 nav li {
   display: inline;
   margin: 0 1rem;
+}
+
+:target {
+  padding-top: 4rem;
 }
 
 h1 a {
@@ -2151,6 +2156,8 @@ footer {
     margin-bottom: 2rem;
   }
   header.grid {
+    padding-top: 4rem;
+    margin-top: -4rem;
     display: grid;
     grid-template-columns: 5fr 7fr;
     grid-template-rows: 1fr;
@@ -2209,6 +2216,10 @@ footer {
     z-index: 2;
   }
 }
+section.contact {
+  padding-top: 4rem;
+  margin-top: -4rem;
+}
 section.contact div.grid {
   padding-top: 1rem;
 }
@@ -2216,5 +2227,6 @@ section.contact div.grid form p {
   text-align: center;
 }
 section.contact div.grid form textarea {
-  height: 200px;
+  height: 125px;
+  text-align: left;
 }/*# sourceMappingURL=style.css.map */

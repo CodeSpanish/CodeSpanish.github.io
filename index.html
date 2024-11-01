@@ -20,23 +20,41 @@
     <link rel="apple-touch-icon" href="/images/Pablo-favicon.webp" />
   </head>
   <body>
-    <nav>
-      <div class="grid">
-        <ul>
-          <li>-</li>
-        </ul>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <nav class="container">
+      <ul>
+        <li>
+          <a href="#about"
+            ><span class="fa-solid fa-house">&ThinSpace;</span></a
+          >
+        </li>
+      </ul>
+      <ul class="mobile">
+        <li>
+          <details class="dropdown">
+            <summary>
+              <span class="fa-solid fa-bars">&ThickSpace;</span>
+            </summary>
+            <ul dir="rtl">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+      <ul class="desktop">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
     <header id="about" class="grid">
       <image src="/images/Pablo-Matamoros.webp" />
       <div>
         <h1>Pablo Matamoros</h1>
+        <h2>Chief Information & Technology Officer</h2>
         <p>
           Innovative and results-driven technology leader with 25+ years of
           experience in digital solutions and enterprise management. Proven
@@ -376,7 +394,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="education">
         <h2>Education</h2>
         <hr />
         <div class="timeline">

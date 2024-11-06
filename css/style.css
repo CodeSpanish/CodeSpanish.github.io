@@ -2486,17 +2486,19 @@ footer {
     grid-template-columns: 4fr 8fr;
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
+    /*
+    div:last-of-type {
+      margin-bottom: 0rem;
+      padding-bottom: 0rem;
+      p:last-of-type {
+        padding-bottom: 0rem;
+        margin-bottom: 0rem;
+      }
+    }
+    */
   }
   .timeline div {
     padding-bottom: 2rem;
-  }
-  .timeline div:last-of-type {
-    margin-bottom: 0rem;
-    padding-bottom: 0rem;
-  }
-  .timeline div:last-of-type p:last-of-type {
-    padding-bottom: 0rem;
-    margin-bottom: 0rem;
   }
   .timeline .left {
     position: relative;

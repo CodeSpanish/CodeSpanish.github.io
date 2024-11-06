@@ -2222,6 +2222,8 @@ aside li [role=button] {
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-style-family-brands: "Font Awesome 6 Brands";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 }
 
 @font-face {
@@ -2231,7 +2233,18 @@ aside li [role=button] {
   font-display: block;
   src: url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.ttf") format("truetype");
+}
 .fa-solid {
+  font-weight: 900;
+}
+
+.fa-brands {
   font-weight: 900;
 }
 
@@ -2263,6 +2276,18 @@ aside li [role=button] {
   content: "\f015";
 }
 
+.fa-linkedin-in:before {
+  content: "\f0e1";
+}
+
+.fa-x-twitter:before {
+  content: "\e61b";
+}
+
+.fa-facebook-f:before {
+  content: "\f39e";
+}
+
 .fa-microscope,
 .fa-truck-fast,
 .fa-laptop-code,
@@ -2271,6 +2296,16 @@ aside li [role=button] {
 .fa-bars,
 .fa-house {
   font-family: "Font Awesome 6 Free";
+}
+
+.fa-linkedin-in,
+.fa-x-twitter,
+.fa-facebook-f {
+  font-family: "Font Awesome 6 Brands";
+}
+
+.fa-linkedin-in {
+  font-size: 1.1rem;
 }
 
 .fa-bars {
@@ -2339,6 +2374,13 @@ nav li {
   display: inline;
   margin: 0 1rem;
 }
+nav ul.social li {
+  padding: 0 0;
+  margin: 0 1rem;
+}
+nav ul.social li a {
+  width: 2.5rem;
+}
 
 nav.container a:hover {
   color: #fff;
@@ -2374,10 +2416,6 @@ header h2 {
   font-size: small;
   margin-bottom: 1rem;
 }
-.timeline .left img {
-  max-width: 50%;
-  max-height: 45px;
-}
 
 footer {
   text-align: center;
@@ -2388,6 +2426,11 @@ footer {
   .timeline div:nth-child(even) {
     margin-bottom: 2rem;
     border-bottom: #e2e2e2 0.5px solid;
+  }
+  .timeline .left img {
+    max-width: 80%;
+    max-height: 80px;
+    margin-bottom: 1rem;
   }
   .desktop {
     display: none;
@@ -2404,6 +2447,12 @@ footer {
     padding-left: 0 !important;
     margin-right: 0 !important;
     padding-right: 0 !important;
+  }
+  nav.container ul.social li {
+    margin: 0 0.5rem !important;
+  }
+  nav.container ul.social:first-child li {
+    margin-left: 0 !important;
   }
 }
 @media (min-width: 769px) {
@@ -2454,8 +2503,8 @@ footer {
     border-right: #e2e2e2 0.5px solid;
   }
   .timeline .left img {
-    max-width: 190px;
-    max-height: 45px;
+    max-width: 65%;
+    max-height: 80px;
   }
   .timeline .left::before {
     content: "";
@@ -2478,6 +2527,10 @@ footer {
     border-radius: 50%;
     background-color: #fff;
     z-index: 2;
+  }
+  section#education .timeline .left img {
+    max-height: 45px;
+    max-width: 60%;
   }
 }
 section.contact {

@@ -32,6 +32,8 @@
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-style-family-brands: "Font Awesome 6 Brands";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 }
 
 @font-face {
@@ -43,7 +45,20 @@
     url("../fonts/fa-solid-900.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fa-brands-400.woff2") format("woff2"),
+    url("../fonts/fa-brands-400.ttf") format("truetype");
+}
+
 .fa-solid {
+  font-weight: 900;
+}
+
+.fa-brands {
   font-weight: 900;
 }
 
@@ -75,6 +90,18 @@
   content: "\f015";
 }
 
+.fa-linkedin-in:before {
+  content: "\f0e1";
+}
+
+.fa-x-twitter:before {
+  content: "\e61b";
+}
+
+.fa-facebook-f:before {
+  content: "\f39e";
+}
+
 .fa-microscope,
 .fa-truck-fast,
 .fa-laptop-code,
@@ -83,6 +110,16 @@
 .fa-bars,
 .fa-house {
   font-family: "Font Awesome 6 Free";
+}
+
+.fa-linkedin-in,
+.fa-x-twitter,
+.fa-facebook-f {
+  font-family: "Font Awesome 6 Brands";
+}
+
+.fa-linkedin-in {
+  font-size: 1.1rem;
 }
 
 .fa-bars {
@@ -158,6 +195,16 @@ nav {
     display: inline; // Display list items inline
     margin: 0 1rem; // Add spacing between list items
   }
+
+  ul.social {
+    li {
+      padding: 0 0;
+      margin: 0 1rem;
+      a {
+        width: 2.5rem;
+      }
+    }
+  }
 }
 
 nav.container {
@@ -204,11 +251,6 @@ header {
       font-size: small;
       margin-bottom: 1rem;
     }
-
-    img {
-      max-width: 50%;
-      max-height: 45px;
-    }
   }
 }
 
@@ -222,6 +264,14 @@ footer {
     div:nth-child(even) {
       margin-bottom: 2rem;
       border-bottom: colors.$grey-100 0.5px solid;
+    }
+
+    .left {
+      img {
+        max-width: 80%;
+        max-height: 80px;
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -242,6 +292,16 @@ footer {
         padding-left: 0 !important;
         margin-right: 0 !important;
         padding-right: 0 !important;
+      }
+    }
+    ul.social {
+      li {
+        margin: 0 0.5rem !important;
+      }
+    }
+    ul.social:first-child {
+      li {
+        margin-left: 0 !important;
       }
     }
   }
@@ -300,8 +360,8 @@ footer {
       border-right: colors.$grey-100 0.5px solid;
 
       img {
-        max-width: 190px;
-        max-height: 45px;
+        max-width: 65%;
+        max-height: 80px;
       }
 
       // Outer Circle
@@ -328,6 +388,16 @@ footer {
         border-radius: 50%; // Make the element circular
         background-color: #fff; // Set the inner circle's color to white
         z-index: 2; // Ensure the inner circle stays on top
+      }
+    }
+  }
+  section#education {
+    .timeline {
+      .left {
+        img {
+          max-height: 45px;
+          max-width: 60%;
+        }
       }
     }
   }

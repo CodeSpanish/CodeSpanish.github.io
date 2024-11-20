@@ -2288,13 +2288,18 @@ aside li [role=button] {
   content: "\f39e";
 }
 
+.fa-calendar-days::before {
+  content: "\f073";
+}
+
 .fa-microscope,
 .fa-truck-fast,
 .fa-laptop-code,
 .fa-cart-shopping,
 .fa-user-tie,
 .fa-bars,
-.fa-house {
+.fa-house,
+.fa-calendar-days {
   font-family: "Font Awesome 6 Free";
 }
 
@@ -2312,6 +2317,14 @@ aside li [role=button] {
   transform: scaleX(1.5);
 }
 
+a.fa-calendar-days {
+  text-decoration: none;
+}
+
+a.fa-calendar-days:hover {
+  color: #0172ad;
+}
+
 html {
   font-size: 1.1rem;
   scroll-behavior: smooth;
@@ -2321,33 +2334,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 0.5rem;
-}
-
-/* Remove default dropdown marker from the summary */
-.dropdown summary {
-  list-style: none; /* Hides the default arrow */
-  cursor: pointer;
-  display: flex;
-}
-.dropdown summary::after {
-  display: none !important;
-}
-.dropdown ul {
-  box-shadow: none !important;
-}
-
-details.dropdown summary {
-  border: none !important;
-  background: none !important;
-  color: #0172ad !important;
-  padding-right: 0px !important;
-}
-
-details.dropdown summary + ul {
-  position: fixed;
-}
-details.dropdown summary + ul li a:hover {
-  color: #0172ad;
 }
 
 a:hover button,
@@ -2388,6 +2374,10 @@ nav.container a:hover {
   background-color: #0172ad;
 }
 
+:has(+ :target) {
+  margin-bottom: 0;
+}
+
 :target {
   padding-top: 4rem;
 }
@@ -2408,11 +2398,13 @@ header h2 {
   color: #777777;
 }
 
-.timeline .left p:nth-child(1) {
+.timeline .left p:nth-child(1),
+.project .left p:nth-child(1) {
   font-weight: bold;
   margin-bottom: 0px;
 }
-.timeline .left p:nth-child(2) {
+.timeline .left p:nth-child(2),
+.project .left p:nth-child(2) {
   font-size: small;
   margin-bottom: 1rem;
 }
@@ -2423,7 +2415,32 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .timeline div:nth-child(even) {
+  /* Remove default dropdown marker from the summary */
+  .dropdown summary {
+    list-style: none; /* Hides the default arrow */
+    cursor: pointer;
+    display: flex;
+  }
+  .dropdown summary::after {
+    display: none !important;
+  }
+  .dropdown ul {
+    box-shadow: none !important;
+  }
+  details.dropdown summary {
+    border: none !important;
+    background: none !important;
+    color: #0172ad !important;
+    padding-right: 0px !important;
+  }
+  details.dropdown summary + ul {
+    position: fixed;
+  }
+  details.dropdown summary + ul li a:hover {
+    color: #0172ad;
+  }
+  .timeline div:nth-child(even),
+  .project div:nth-child(even) {
     margin-bottom: 2rem;
     border-bottom: #e2e2e2 0.5px solid;
   }
@@ -2475,40 +2492,25 @@ footer {
     display: grid;
     grid-template-columns: 5fr 7fr;
     grid-template-rows: 1fr;
-    overflow: hidden;
     margin-bottom: 2rem;
   }
   header.grid img {
     max-height: 400px;
   }
-  .timeline {
+  .timeline, .project {
     display: grid;
     grid-template-columns: 4fr 8fr;
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
-    /*
-    div:last-of-type {
-      margin-bottom: 0rem;
-      padding-bottom: 0rem;
-      p:last-of-type {
-        padding-bottom: 0rem;
-        margin-bottom: 0rem;
-      }
-    }
-    */
   }
-  .timeline div {
+  .timeline div, .project div {
     padding-bottom: 2rem;
   }
-  .timeline .left {
+  .timeline .left, .project .left {
     position: relative;
     border-right: #e2e2e2 0.5px solid;
   }
-  .timeline .left img {
-    max-width: 65%;
-    max-height: 80px;
-  }
-  .timeline .left::before {
+  .timeline .left::before, .project .left::before {
     content: "";
     position: absolute;
     top: 10px;
@@ -2519,7 +2521,7 @@ footer {
     background-color: #51b4ff;
     z-index: 1;
   }
-  .timeline .left::after {
+  .timeline .left::after, .project .left::after {
     content: "";
     position: absolute;
     top: 12px;
@@ -2533,6 +2535,13 @@ footer {
   section#education .timeline .left img {
     max-height: 45px;
     max-width: 60%;
+  }
+  .timeline .left img {
+    max-width: 65%;
+    max-height: 80px;
+  }
+  .project .left img {
+    max-width: 65%;
   }
 }
 section.contact {
@@ -2548,4 +2557,19 @@ section.contact div.grid form p {
 section.contact div.grid form textarea {
   height: 125px;
   text-align: left;
+}
+
+/* Projects styles */
+details.dropdown.projects {
+  width: 50%;
+}
+details.dropdown.projects summary {
+  text-align: left;
+  list-style: none;
+}
+details.dropdown.projects summary::-webkit-details-marker {
+  display: none; /* Hides the marker in WebKit browsers */
+}
+details.dropdown.projects summary::marker {
+  content: ""; /* Hides the marker in other browsers */
 }/*# sourceMappingURL=style.css.map */

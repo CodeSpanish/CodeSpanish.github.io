@@ -102,13 +102,18 @@
   content: "\f39e";
 }
 
+.fa-calendar-days::before {
+  content: "\f073";
+}
+
 .fa-microscope,
 .fa-truck-fast,
 .fa-laptop-code,
 .fa-cart-shopping,
 .fa-user-tie,
 .fa-bars,
-.fa-house {
+.fa-house,
+.fa-calendar-days {
   font-family: "Font Awesome 6 Free";
 }
 
@@ -126,6 +131,14 @@
   transform: scaleX(1.5);
 }
 
+a.fa-calendar-days {
+  text-decoration: none;
+}
+
+a.fa-calendar-days:hover {
+  color: colors.$azure-550;
+}
+
 //Override classes
 html {
   font-size: 1.1rem;
@@ -137,37 +150,6 @@ body {
   max-width: 1200px; // Set your desired width
   margin: 0 auto; // Center the container
   padding: 0 0.5rem;
-}
-
-/* Remove default dropdown marker from the summary */
-.dropdown {
-  summary {
-    list-style: none; /* Hides the default arrow */
-    cursor: pointer;
-    display: flex;
-    &::after {
-      display: none !important;
-    }
-  }
-  ul {
-    box-shadow: none !important;
-  }
-}
-
-details.dropdown summary {
-  border: none !important;
-  background: none !important;
-  color: colors.$azure-550 !important;
-  padding-right: 0px !important;
-}
-
-details.dropdown summary + ul {
-  position: fixed;
-  li {
-    a:hover {
-      color: colors.$azure-550;
-    }
-  }
 }
 
 a:hover button,
@@ -215,6 +197,10 @@ nav.container {
   }
 }
 
+:has(+ :target) {
+  margin-bottom: 0;
+}
+
 :target {
   padding-top: 4rem;
 }
@@ -240,7 +226,8 @@ header {
   }
 }
 
-.timeline {
+.timeline,
+.project {
   .left {
     p:nth-child(1) {
       font-weight: bold;
@@ -260,12 +247,46 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .timeline {
+  /* Remove default dropdown marker from the summary */
+  .dropdown {
+    summary {
+      list-style: none; /* Hides the default arrow */
+      cursor: pointer;
+      display: flex;
+      &::after {
+        display: none !important;
+      }
+    }
+    ul {
+      box-shadow: none !important;
+    }
+  }
+
+  details.dropdown summary {
+    border: none !important;
+    background: none !important;
+    color: colors.$azure-550 !important;
+    padding-right: 0px !important;
+  }
+
+  details.dropdown summary + ul {
+    position: fixed;
+    li {
+      a:hover {
+        color: colors.$azure-550;
+      }
+    }
+  }
+
+  .timeline,
+  .project {
     div:nth-child(even) {
       margin-bottom: 2rem;
       border-bottom: colors.$grey-100 0.5px solid;
     }
+  }
 
+  .timeline {
     .left {
       img {
         max-width: 80%;
@@ -328,7 +349,6 @@ footer {
     display: grid;
     grid-template-columns: 5fr 7fr;
     grid-template-rows: 1fr;
-    overflow: hidden;
     margin-bottom: 2rem;
     img {
       max-height: 400px;
@@ -336,7 +356,7 @@ footer {
   }
 
   //Experience section
-  .timeline {
+  .timeline, .project {
     display: grid;
     grid-template-columns: 4fr 8fr;
     grid-template-rows: 1fr;
@@ -346,25 +366,9 @@ footer {
       padding-bottom: 2rem;
     }
 
-    /*
-    div:last-of-type {
-      margin-bottom: 0rem;
-      padding-bottom: 0rem;
-      p:last-of-type {
-        padding-bottom: 0rem;
-        margin-bottom: 0rem;
-      }
-    }
-    */
-
     .left {
       position: relative; // Make the div a positioning context for the circle
       border-right: colors.$grey-100 0.5px solid;
-
-      img {
-        max-width: 65%;
-        max-height: 80px;
-      }
 
       // Outer Circle
       &::before {
@@ -403,6 +407,24 @@ footer {
       }
     }
   }
+
+  .timeline {
+    .left {
+      img {
+        max-width: 65%;
+        max-height: 80px;
+      }
+    }
+  }
+
+  .project {
+    .left {
+      img {
+        max-width: 65%;
+      }
+    }
+  }
+
 }
 
 section.contact {
@@ -419,5 +441,22 @@ section.contact {
         text-align: left;
       }
     }
+  }
+}
+
+/* Projects styles */
+details.dropdown.projects {
+  width: 50%;
+  summary {
+    text-align: left;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none; /* Hides the marker in WebKit browsers */
+  }
+
+  summary::marker {
+    content: ""; /* Hides the marker in other browsers */
   }
 }
